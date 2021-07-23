@@ -1,5 +1,5 @@
-const express = require('express');
-const userController = require('../controllers/user.js');
+import express from 'express';
+import * as userController from '../controllers/user';
 
 const router = express.Router();
 
@@ -7,4 +7,4 @@ router.post('/login', userController.attemptLogin);
 
 router.patch('/favorite-recipe', userController.addFavoriteRecipe);
 
-module.exports = router;
+export default router;

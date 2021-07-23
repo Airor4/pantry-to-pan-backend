@@ -1,6 +1,6 @@
-const express = require('express');
-const userRouter = require('./routes/user.js');
-const queryRouter = require('./routes/query.js');
+import express from 'express'
+import userRouter from './routes/user';
+import queryRouter from './routes/query';
 
 const app = express();
 
