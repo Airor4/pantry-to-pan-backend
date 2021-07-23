@@ -1,0 +1,20 @@
+{
+  "name": "pantry_backend",
+  "version": "1.0.0",
+  "description": "backend express server for pantrytopan.org aka recipe-finder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js",
+    "instance": "node src/index.js"
+  },
+  "author": "Airor",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
