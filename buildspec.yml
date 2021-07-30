@@ -24,4 +24,4 @@ artifacts:
     - package.json
     - package-lock.json
   discard-paths: no
-  base-directory: build/
+  base-directory: build
