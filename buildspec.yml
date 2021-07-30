@@ -7,7 +7,7 @@ phases:
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
       - . ~/.nvm/nvm.sh
       - echo installing node-14.17.3
-      - nvm install node 14.17.3
+      - nvm install 14.17.3
   pre_build:
     commands:
       # install the typescript compiler
