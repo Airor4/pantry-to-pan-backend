@@ -5,7 +5,8 @@ phases:
     commands:
       - echo installing nvm...
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-      - export NVM_DIR="$HOME/.nvm" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      - export NVM_DIR="$HOME/.nvm"
+      - "[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh""
       - nvm install 14.17.3
   pre_build:
     commands:
