@@ -13,11 +13,11 @@ phases:
   pre_build:
     commands:
       # install the typescript compiler
-      - npm i -g tsc
+      - npm i typescript
   build:
     commands:
       # build the ts into js
-      - tsc -p .
+      - npx tsc -p .
 artifacts:
   files: 
     - build/**/*
