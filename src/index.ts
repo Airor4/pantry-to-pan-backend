@@ -11,7 +11,7 @@ const app = express();
 
 const port = 3000;
 
-app.use(cors({"origin": process.env.FRONTEND_ORIGIN}));
+app.use(cors());
 // app.options('*', cors())
 
 app.get('/', (req, res) => {
