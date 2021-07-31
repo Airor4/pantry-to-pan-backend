@@ -9,9 +9,9 @@ import queryRouter from './routes/query';
 
 const app = express();
 
-const port = 3000;
+const port = 80;
 
-app.use(cors());
+app.use(cors({"origin": process.env.FRONTEND_ORIGIN}));
 // app.options('*', cors())
 
 app.get('/', (req, res) => {
