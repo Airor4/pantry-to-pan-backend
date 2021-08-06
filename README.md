@@ -15,6 +15,6 @@ When the npm packages are installed I need to run `npm install --production` in 
 ## Environment variables
 - NODE_ENV=production
 - FRONTEND_ORIGIN=pantrytopan.org (for cors. Not sure if I should limit cors or the security group. maybe both?)
-- PORT=80/443 [An Amazon EC2 security group configured to allow inbound traffic on port 80.](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs_express.html)
+- PORT=8080/443 nginx forwards traffic from port 80 to the app listening on port 8080
 - X_RAPIDAPI_KEY= (spoonacular api key)
 - X_RAPIDAPI_HOST= (spoonacular api key)
