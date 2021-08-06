@@ -12,7 +12,7 @@ const app = express();
 // 8080 for nginx and eb
 const port = process.env.PORT || 8080;
 
-app.use(cors({origin: 'pantrytopan.org'}));
+app.use(cors({origin: 'https://pantrytopan.org'}));
 // app.options('*', cors())
 
 app.get('/', (req, res) => {
