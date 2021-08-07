@@ -14,9 +14,6 @@ const port = process.env.PORT || 8080;
 
 if (process.env.DEV_ENV ) {
   app.use(cors({origin: 'http://localhost:4200'}));
-  app.listen(port, () => {
-    console.log(`app listening on ${port}`);
-  });
 } else {
   console.log('Cors enabled for prod');
   // app.use(cors({origin: 'https://pantrytopan.org'}));
@@ -34,5 +31,9 @@ app.get('/', (req, res) => {
 
 app.use('/user', userRouter);
 app.use('/query', queryRouter);
+
+app.listen(port, () => {
+  console.log(`app listening on ${port}`);
+});
 
 
