@@ -10,7 +10,7 @@ import queryRouter from './routes/query';
 const app = express();
 
 // 8080 for nginx and eb
-const port = process.env.PORT || 8080;
+//const port = process.env.PORT || 8080;
 
 app.use(cors({origin: 'https://pantrytopan.org'}));
 // app.options('*', cors())
@@ -22,6 +22,4 @@ app.get('/', (req, res) => {
 app.use('/user', userRouter);
 app.use('/query', queryRouter);
 
-app.listen(port, () => {
-  console.log(`recipe backend listening at port: ${port}`);
-});
+

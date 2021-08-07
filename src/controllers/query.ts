@@ -28,8 +28,8 @@ export const spoonacular: RequestHandler = async (req, res) => {
 		const recipes = getRecipesFromQuery(response.data.results);
 		res.status(200).json(recipes);
 	} catch (error) {
-		console.log(error)
-		res.status(500).send(error)
+		console.log(error);
+		res.status(500).send(error);
 	}
 }
 
