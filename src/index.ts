@@ -13,13 +13,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 if (process.env.DEV_ENV ) {
-  // app.use(cors({origin: 'http://localhost:4200'}));
-  app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
-    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next()
-  });
+  app.use(cors({origin: 'http://localhost:4200'}));
   app.listen(port, () => {
     console.log(`app listening on ${port}`);
   });
@@ -27,7 +21,7 @@ if (process.env.DEV_ENV ) {
   console.log('Cors enabled for prod');
   // app.use(cors({origin: 'https://pantrytopan.org'}));
   app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'https://pantrytopan.org');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next()
