@@ -12,17 +12,10 @@ const app = express();
 // 8080 for nginx and eb
 const port = process.env.PORT || 8080;
 
-app.get('/', (req, res) => {
-  res.send('welcome to the recipe api');
-});
-
-app.use('/user', userRouter);
-app.use('/query', queryRouter);
-
 if (process.env.DEV_ENV ) {
   // app.use(cors({origin: 'http://localhost:4200'}));
   app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+    res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
     res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next()
@@ -40,5 +33,12 @@ if (process.env.DEV_ENV ) {
     next()
   });
 }
+
+app.get('/', (req, res) => {
+  res.send('welcome to the recipe api');
+});
+
+app.use('/user', userRouter);
+app.use('/query', queryRouter);
 
 
