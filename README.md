@@ -6,15 +6,11 @@ dev server can be run using
 `npm run dev`
 
 # Production
-## How it works
-The express app has a cd pipeline setup with codepipeline in order to deploy to AWS Elastic Beanstalk.
-
-## Things to remember
-When the npm packages are installed I need to run `npm install --production` in order to avoid installing dev dependencies however this may not install tsc so I need to check in on that and see if tsc is installed in time in order to compile it for the beanstalk app.
+The express app has a cd pipeline setup with codepipeline in order to deploy to AWS Elastic Beanstalk. CodePipeline uses CodeCommit to pull the code and trigger the pipeline when new code is merged into master. CodeBuild uses the buildpsec.yml to compile the code into executable js and uploads the artifacts to s3. The artifacts are then deployed to elastic beanstalk. A beanstalk deployment is made up of an application and an application. Beanstalk has a built in load balancer. The load balancer needs an added listener that listens on port 443 for https. The route53 PantryToPan subdomain, api.pantrytopan.org, also needs an alias record to point to the ARN of the beanstalk environment. SSL is enabled on api.pantrytopan.org through aws' certificate manager
 
 ## Environment variables
 - NODE_ENV=production
 - FRONTEND_ORIGIN=pantrytopan.org (for cors. Not sure if I should limit cors or the security group. maybe both?)
-- PORT=8080/443 nginx forwards traffic from port 80 to the app listening on port 8080
+- PORT=8080
 - X_RAPIDAPI_KEY= (spoonacular api key)
 - X_RAPIDAPI_HOST= (spoonacular api key)
